@@ -17,20 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzas', function () {
-    //in some instances this is where data is feteched before passong it to the view
-    $pizzas = [
-        ["type"=>"Hawaiin","base"=>"Cheesy Crust","price" => 10],
-        ["type"=>"Peruvian","base"=>"Garlic Crust","price" => 30],
-        ["type"=>"Mexican","base"=>"Ginger Crust","price" => 20]
-    ];
-
-
-    return view('pizzas',
-    [
-        'pizzas' => $pizzas,
-        'name' => request('name'), //this is how we obtain query parameters from the URL
-        'age' => request('age')
-
-    ]);
-});
+Route::get('/pizzas', 'PizzaController@index');
+Route::get('/pizzas/{id}', 'PizzaController@show');
