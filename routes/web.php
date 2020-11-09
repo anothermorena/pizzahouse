@@ -19,10 +19,10 @@ Route::get('/', function () {
 
 Route::get('/pizzas', function () {
     //in some instances this is where data is feteched before passong it to the view
-    $pizza = [
-        "type"=>"Hawaiin",
-        "base"=>"Cheesy Crust",
-        "price" => 10
+    $pizzas = [
+        ["type"=>"Hawaiin","base"=>"Cheesy Crust","price" => 10],
+        ["type"=>"Peruvian","base"=>"Garlic Crust","price" => 30],
+        ["type"=>"Mexican","base"=>"Ginger Crust","price" => 20]
     ];
-    return view('pizzas',$pizza);
+    return view('pizzas',['pizzas' => $pizzas]);
 });
