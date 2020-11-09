@@ -24,5 +24,13 @@ Route::get('/pizzas', function () {
         ["type"=>"Peruvian","base"=>"Garlic Crust","price" => 30],
         ["type"=>"Mexican","base"=>"Ginger Crust","price" => 20]
     ];
-    return view('pizzas',['pizzas' => $pizzas]);
+
+
+    return view('pizzas',
+    [
+        'pizzas' => $pizzas,
+        'name' => request('name'), //this is how we obtain query parameters from the URL
+        'age' => request('age')
+
+    ]);
 });

@@ -2,13 +2,16 @@
 
 @section('content')
 <div class="flex-center position-ref full-height">
-            
+
     <div class="content">
         <div class="title m-b-md">
            Pizza List
         </div>
+
+        {{ $name }} <br>
+        {{ $age }}
         @foreach($pizzas as $pizza)
-            <div> 
+            <div>
             {{$loop->index}}. {{$pizza['type']}}- {{$pizza['base']}}
 
             @if($loop->first)
@@ -24,4 +27,4 @@
     </div>
 </div>
 @endsection
-    
+
