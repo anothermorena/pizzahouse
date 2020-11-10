@@ -26,7 +26,7 @@ class PizzaController extends Controller{
     }
 
     public function show($id){
-    //use the $id variable to query the database for a record
+
       return view('details',['id'=> $id]);
     }
 
