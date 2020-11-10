@@ -14,7 +14,7 @@ class PizzaController extends Controller{
         //$pizzas = Pizza::orderBy('name','asc')->get();
         $pizzas = Pizza::where('type','Hawaiin')->get();
 
-        return view('pizzas',[
+        return view('pizzas.index',[
 
             'pizzas' => $pizzas,
             'name' => request('name'), //this is how we obtain query parameters from the URL
@@ -26,7 +26,12 @@ class PizzaController extends Controller{
 
     public function show($id){
 
-      return view('details',['id'=> $id]);
+      return view('pizzas.show',['id'=> $id]);
+    }
+
+    public function create(){
+
+        return view('pizzas.create');
     }
 
 }
