@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pizza;
 
 class PizzaController extends Controller{
 
     //this is for the / route --> to get the index view/page
     public function index(){
-        $pizzas = [
-            ["type"=>"Hawaiin","base"=>"Cheesy Crust","price" => 10],
-            ["type"=>"Peruvian","base"=>"Garlic Crust","price" => 30],
-            ["type"=>"Mexican","base"=>"Ginger Crust","price" => 20]
-        ];
 
+        //$pizzas = Pizza::all();
+        //$pizzas = Pizza::orderBy('name','asc')->get();
+        $pizzas = Pizza::where('type','Hawaiin')->get();
 
         return view('pizzas',[
 
