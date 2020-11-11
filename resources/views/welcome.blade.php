@@ -20,6 +20,8 @@
             <div class="title m-b-md">
                 The North's Best Pizzas
             </div>
+            <!-- Get any session messages if available and display it to the user -->
+            <p class="mssg"> {{ session("mssg") }}</p>
             <a href="/pizzas/create">Order A Pizza</a>
         </div>
 </div>
