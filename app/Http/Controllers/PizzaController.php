@@ -40,4 +40,13 @@ class PizzaController extends Controller{
         return view('pizzas.create');
     }
 
+    public function store() {
+
+        $name = request('name');
+        $type = request('type');
+        $base = request('base');
+
+        return redirect("/");
+    }
+
 }
